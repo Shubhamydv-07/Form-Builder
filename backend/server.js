@@ -10,7 +10,12 @@ const path = require('path');
 const app = express();
 
 // Middleware
-app.use(cors({ origin: '*' }));
+app.use(cors({
+  origin: ["https://form-builder-app-1-y7q5.onrender.com"], // frontend URL
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 app.use(express.json({limit:"10mb"}));
 
 // Static uploads
